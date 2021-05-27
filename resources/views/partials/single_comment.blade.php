@@ -9,7 +9,7 @@
                         <div class="col-auto p-0 m-0 ms-auto">
                             <span class="comment_id COMMENTID" hidden>{{$comment->id}}</span>
 
-                            @if($user_id==$comment->user_id)
+                            @if($comment->isOwner)
                                 <div class="dropdown">
                                 <a class="btn fa-cog-icon" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fas fa-cog ms-auto"></i>
@@ -67,7 +67,7 @@
                                         </h3>
                                     @endif
                                     @auth
-                                        @if($user_id != $comment->user_id)
+                                        @if(!$comment->isOwner)
                                             @if(!$comment->reported)
                                                 <span hidden class="content_id comment_content">{{$comment->id}}</span>
                                                 <i title="Report comment"
@@ -132,7 +132,7 @@
                                         <div class="col-auto p-0 m-0 ms-auto">
                                             <span class="comment_id THREADID" hidden>{{$comment->id}}</span>
                                             <span class="parent_id" hidden>{{$comment->comment_id}}</span>
-                                            @if($user_id == $comment->user_id)
+                                            @if($comment->isOwner)
 
                                                 <div class="dropdown">
                                                 <a class="btn fa-cog-icon" style="font-size:30%;"
@@ -191,7 +191,7 @@
                                         </h3>
                                                     @endif
                                                     @auth
-                                                        @if($user_id != $comment->user_id)
+                                                        @if(!$comment->isOwner)
                                                             @if(!$comment->reported)
                                                                 <span hidden
                                                                       class="content_id comment_content">{{$comment->id}}</span>

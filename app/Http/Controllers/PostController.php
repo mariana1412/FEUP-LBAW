@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\HelperController;
 
 
 class PostController extends Controller
@@ -194,8 +195,7 @@ class PostController extends Controller
         $USER = AuthenticatedUser::find($post->user_id);
 
         //Get comment count,likes and dislikes
-        $comments = Comment::getPostComments($id,"desc",1);
-        $comments = Comment::checkReported($comments,$user_id);
+        $comments = HelperController::getPostComments($id,"desc",1);
         foreach ($comments as $c){
             $like = DB::table("vote_comment")->where("comment_id",$c->id)->where('user_id', $user_id)->value('like');
             if($like === true) $liked = 2;
@@ -490,50 +490,6 @@ class PostController extends Controller
         return 'A';
     }
 
-    public function popularComments(Request $request, $post_id){
-        $route = \Route::current();
-        if(!is_numeric($route->parameter('post_id')))
-            return "";
-        $post = Post::find($post_id);
-        if(!$post )
-            return "";
-        $user_id = 0;
-        if(Auth::check())
-            $user_id = Auth::user()->id;
-        $comments = Comment::getPostPopularComments($post_id);
-        return Comment::commentsAsHtml($comments,$user_id);
-
-
-    }
-
-    public function newerComments(Request $request, $post_id){
-        $route = \Route::current();
-        if(!is_numeric($route->parameter('post_id')))
-            return "";
-        $post = Post::find($post_id);
-        if(!$post )
-            return "";
-        $user_id = 0;
-        if(Auth::check())
-            $user_id = Auth::user()->id;
-        $comments = Comment::getPostComments($post_id,"desc",1);
-        return Comment::commentsAsHtml($comments,$user_id);
-    }
-
-    public function olderComments(Request $request, $post_id){
-        $route = \Route::current();
-        if(!is_numeric($route->parameter('post_id')))
-            return "";
-        $post = Post::find($post_id);
-        if(!$post )
-            return "";
-        $user_id = 0;
-        if(Auth::check())
-            $user_id = Auth::user()->id;
-        $comments = Comment::getPostComments($post_id,"asc",1);
-        return Comment::commentsAsHtml($comments,$user_id);
-    }
-
     public function loadMore(Request $request, $post_id,$page){
         $route = \Route::current();
         if(!is_numeric($route->parameter('post_id')) || !is_numeric($route->parameter('page')))
@@ -544,8 +500,8 @@ class PostController extends Controller
         $user_id = 0;
         if(Auth::check())
             $user_id = Auth::user()->id;
-        $comments = Comment::getPostComments($post_id,"desc",$page);
-        return Comment::commentsAsHtml($comments,$user_id);
+        $comments = HelperController::getPostComments($post_id,"desc",$page);
+        return HelperController::commentsAsHtml($comments,$user_id);
     }
 
 

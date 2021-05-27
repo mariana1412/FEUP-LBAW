@@ -95,21 +95,26 @@
                 <div class="row justify-content-center mt-3 mb-3 px-4 mx-1">
                     <div class="col-10">
                         <div class="row justify-content-start align-items-center">
+                            <h2 class="col-auto post-page-post-tags-indicator m-0 p-0">Type: </h2>
+                            <div class="col-auto  px-2 m-1">
+                                <a style="color:#0C1D1C;font-weight:400;"
+                                   href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "type=" . rawurlencode(ucfirst($post->type))}}">{{ucfirst($post->type)}}</a>
+                                
+                            </div>
+                            <h2 class="col-auto post-page-post-tags-indicator m-0 p-0">Category: </h2>
+                            <div class="col-auto  px-2 m-1">
+                                <a style="color:#0C1D1C;font-weight:400;"
+                                   href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "category=" . rawurlencode(ucfirst($post->category))}}">{{ucfirst($post->category)}}</a>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center mt-3 mb-3 px-4 mx-1">
+                    <div class="col-10">
+                        <div class="row justify-content-start align-items-center">
                             <h2 class="col-auto post-page-post-tags-indicator m-0 p-0">Tags: </h2>
-                            <div class="col-auto post-page-tag-container px-2 m-1">
-                                <a class="post-page-post-tag"
-                                   href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "type=" . rawurlencode(ucfirst($post->type))}}">{{$post->type}}</a>
-                                @auth
-                                    <i class="fas fa-square-full" style="color:transparent;"></i>
-                                @endauth
-                            </div>
-                            <div class="col-auto post-page-tag-container px-2 m-1">
-                                <a class="post-page-post-tag"
-                                   href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "category=" . rawurlencode(ucfirst($post->category))}}">{{$post->category}}</a>
-                                @auth
-                                    <i class="fas fa-square-full" style="color:transparent;"></i>
-                                @endauth
-                            </div>
                             @foreach($metadata['tags'] as $tag)
                                 <div class="col-auto post-page-tag-container px-2 m-1">
                                     <span hidden class="tag_id">{{$tag->id}}</span>
@@ -183,19 +188,6 @@
                         <div class="row justify-content-between align-items-center comment-indicator-row mb-3">
                             <div class="col-auto m-0 p-0">
                                 <h3 class="mt-0 py-0 mb-1">Comments</h3>
-                            </div>
-                            <div hidden class="col-auto p-0 m-0">
-                                <div class="dropdown p-0 m-0">
-                                    <button class="btn btn-secondary dropdown-toggle comment-sort-by-button p-0 m-0"
-                                            type="button" id="comments-sort-by" data-bs-toggle="dropdown"
-                                            aria-expanded="false">Sort by
-                                    </button>
-                                    <ul class="dropdown-menu comments-sort-by" aria-labelledby="comments-sort-by">
-                                        <li><a id="sort_popular" class="dropdown-item">Most popular</a></li>
-                                        <li><a id="sort_newest" class="dropdown-item">Newest</a></li>
-                                        <li><a id="sort_oldest" class="dropdown-item">Oldest</a></li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                     </div>
