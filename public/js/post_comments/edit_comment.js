@@ -130,7 +130,8 @@ function confirmEdit(comment_id,container,type){
         updateSortedBy("Sort by");
         }
         else{
-            alert("Error editing comment!");
+            empty_warning.show();
+            //alert("Error editing comment!");
             return;
         }
     };

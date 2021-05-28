@@ -62,7 +62,8 @@ function addThread(comment_id,content){
         
     };
     if(content.value=="" || content.value.match("^\\s+$")){
-        alert("Empty comments are not allowed!");
+        //alert("Empty comments are not allowed!");
+        empty_warning.show();
         return;
     }
     request.setRequestHeader('X-CSRF-TOKEN',token.getAttribute("content"));

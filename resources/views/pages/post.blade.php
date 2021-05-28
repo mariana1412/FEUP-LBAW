@@ -243,5 +243,6 @@
     </div>
 @include('pages.confirm')
 @include('partials.report_modal')
+@include('partials.empty_comment')
 @endsection
 
