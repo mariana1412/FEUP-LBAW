@@ -71,8 +71,13 @@
                                             @if(!$comment->reported)
                                                 <span hidden class="content_id comment_content">{{$comment->id}}</span>
                                                 <i title="Report comment"
-                                                   class="fas fa-ban my-0 post-page-report-comment pe-3 report_action"
+                                                   class="far fa-flag my-0 post-page-report-comment pe-3 report_action"
                                                    data-bs-toggle="modal" data-bs-target="#report"></i>
+                                            @else
+                                                <span hidden class="content_id comment_content">{{$comment->id}}</span>
+                                                <i title="Report comment"
+                                                   class="fas fa-flag my-0 post-page-report-comment pe-3 reported report_action"
+                                                    style="color:crimson;"></i>
                                             @endif
                                         @endif
                                     @endauth
@@ -140,11 +145,11 @@
                                                     <i class="fas fa-cog ms-auto" style="font-size:3em;"></i>
                                                 </a>
                                                 <ul class="dropdown-menu dropdown-menu-end">
-                                                    <a class="dropdown-item edit_comment_button">Edit Thread</a>
+                                                    <a class="dropdown-item edit_comment_button">Edit Comment</a>
                                                     <li>
                                                         <hr class="dropdown-divider">
                                                     </li>
-                                                    <a class="dropdown-item delete_comment_button">Delete Thread</a>
+                                                    <a class="dropdown-item delete_comment_button">Delete Comment</a>
                                                 </ul>
                                             </div>
                                             @endif
@@ -193,11 +198,15 @@
                                                     @auth
                                                         @if(!$comment->isOwner)
                                                             @if(!$comment->reported)
-                                                                <span hidden
-                                                                      class="content_id comment_content">{{$comment->id}}</span>
+                                                                <span hidden class="content_id comment_content">{{$comment->id}}</span>
                                                                 <i title="Report comment"
-                                                                   class="fas fa-ban my-0 post-page-report-comment pe-3 report_action"
-                                                                   data-bs-toggle="modal" data-bs-target="#report"></i>
+                                                                class="far fa-flag my-0 post-page-report-comment pe-3 report_action"
+                                                                data-bs-toggle="modal" data-bs-target="#report"></i>
+                                                            @else
+                                                                <span hidden class="content_id comment_content">{{$comment->id}}</span>
+                                                                <i title="Report comment"
+                                                                class="fas fa-flag my-0 post-page-report-comment pe-3 reported report_action"
+                                                                    style="color:crimson;"></i>
                                                             @endif
                                                         @endif
                                                     @endauth

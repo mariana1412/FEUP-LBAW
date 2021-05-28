@@ -167,7 +167,16 @@
                                         <button
                                             class="post-page-post-report-button btn ms-0 me-0 py-0 px-0 report_action report_post_button"
                                             data-bs-toggle="modal" data-bs-target="#report"><i title="Report post"
-                                                                                               class="fas fa-ban m-0"></i>
+                                                                                               class="far fa-flag m-0 report_post_icon"></i>
+                                        </button>
+                                    </div>
+                                @else
+                                    <div class="col-auto px-0 mx-0 ms-auto">
+                                        <span hidden class="content_id post_content">{{$post->id}}</span>
+                                        <button
+                                            class="post-page-post-report-button btn ms-0 me-0 py-0 px-0 reported report_action report_post_button"
+                                            ><i title="Report post"
+                                                                                               class="fas fa-flag m-0 report_post_icon" style="color:crimson;"></i>
                                         </button>
                                     </div>
                                 @endif
