@@ -28,7 +28,7 @@ class HelperController{
         return $result;
     }
 
-    public static function getCommentThreads($comment_id,$user_id){
+    public static function getCommentThreads($comment_id, $user_id){
         $comments = Comment::where("comment_id",$comment_id)->orderBy("comment_date","desc")->get();
         $result = array();
         foreach($comments as $comment){
@@ -36,8 +36,8 @@ class HelperController{
             $result[] = $temp;
         }
         return $result;
-    }
 
+    }
 
     public static function getCommentInfo($comment_id,$user_id){
         $comment = Comment::find($comment_id);
@@ -54,6 +54,13 @@ class HelperController{
         $comment->thread_count = count($threads);
         $comment->isOwner = $comment->user_id == $user_id;
         $comment->reported=false;
+
+        $like = DB::table("vote_comment")->where("comment_id",$comment->id)->where('user_id', $user_id)->value('like');
+        if($like === true) $liked_c = 2;
+        else if($like === false) $liked_c = 1;
+        else $liked_c = 0;
+        $comment->liked = $liked_c;
+
         $report = Report::where("user_reporting",$user_id)->where("comment_reported",$comment->id)->get()->count();
         if($report>0)
             $comment->reported=true;
@@ -68,4 +75,4 @@ class HelperController{
         $comment = HelperController::getCommentInfo($comment_id,$user_id);
         return view("partials.single_comment",["comment"=>$comment]);
     }
-}    
+}

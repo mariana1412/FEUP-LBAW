@@ -195,13 +195,6 @@ class PostController extends Controller
 
         //Get comment count,likes and dislikes
         $comments = HelperController::getPostComments($id,"desc",1);
-        foreach ($comments as $c){
-            $like = DB::table("vote_comment")->where("comment_id",$c->id)->where('user_id', $user_id)->value('like');
-            if($like === true) $liked_c = 2;
-            else if($like === false) $liked_c = 1;
-            else $liked_c = 0;
-            $c->liked = $liked_c;
-        }
 
         $comment_count = Comment::where('post_id',$id)->get()->count();
         $votes = DB::table("vote_post")->where("post_id",$id);

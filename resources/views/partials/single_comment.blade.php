@@ -164,6 +164,7 @@
                                         <div class="col-lg-auto col-12 px-0 py-1 m-0 align-self-end ms-auto">
                                             <div class="row">
                                                 <div class="d-flex comment_interactions">
+
                                                     @if($comment->liked == 2)
                                                         <h3 class="post-page-comment-interactions p-0 m-0 d-flex align-items-end" style="padding-bottom:0;">
                                                             <span class="up " style="padding-right:5%;">{{$comment->likes}}</span>
@@ -202,12 +203,12 @@
                                                                 class="far fa-flag my-0 post-page-report-comment pe-3 report_action"
                                                                 data-bs-toggle="modal" data-bs-target="#report"></i>
                                                             @else
-                                                                
+
                                                                 <i title="Reported comment"
                                                                 class="fas fa-flag my-0 post-page-report-comment pe-3 reported report_action"
                                                                     style="color:crimson;"></i>
                                                             @endif
-                                                        </div>    
+                                                        </div>
                                                         @endif
                                                     @endauth
                                                 </div>
