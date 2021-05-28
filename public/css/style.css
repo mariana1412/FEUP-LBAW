@@ -1300,3 +1300,12 @@ h3.post-page-comment-reply-interactions {
     width: 70%;
 }
 
+
+
+
+
+
+#liveToast .toast-header{
+    color:black;
+    background-color: #8ab5b1;
+}

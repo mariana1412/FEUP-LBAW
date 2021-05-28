@@ -5,6 +5,8 @@ let yes = confirm.getElementsByClassName("confirm_button")[0];
 let id = document.getElementById("post_ID");
 let token = document.getElementsByName("csrf-token")[0];
 let empty_warning = new bootstrap.Modal(document.getElementById('empty_comment_warning'));
+let toaster_basic_obj = new bootstrap.Toast(document.getElementById("liveToast"));
+let toaster_basic_node = document.getElementById("liveToast");
 if(yes)
     yes.addEventListener("click",delete_post);
 

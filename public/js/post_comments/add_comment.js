@@ -30,7 +30,6 @@ function addComment(){
             addDeleteCommentListeners();
             addEditListeners();
             addShowThreadListeners();
-            updateSortedBy("Sort by");
             updateCommentCount(1);
             EmptyCommentsVisibility(true);
         }

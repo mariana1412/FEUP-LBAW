@@ -39,10 +39,14 @@ function addSavePostListeners(){
             if(type=="post"){
               listClass.remove("bi-bookmark-plus-fill");
               listClass.add("bi-bookmark-check-fill");
+              toaster_basic_node.getElementsByClassName("toast-body")[0].innerText = "Post successfully added to favorites!";
+              toaster_basic_obj.show();
             }
             if(type=="delete"){
               listClass.remove("bi-bookmark-check-fill");
               listClass.add("bi-bookmark-plus-fill");
+              toaster_basic_node.getElementsByClassName("toast-body")[0].innerText = "Post successfully removed from favorites!";
+              toaster_basic_obj.show();
             }
         }    
     };

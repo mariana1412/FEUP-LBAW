@@ -175,7 +175,7 @@
                                         <span hidden class="content_id post_content">{{$post->id}}</span>
                                         <button
                                             class="post-page-post-report-button btn ms-0 me-0 py-0 px-0 reported report_action report_post_button"
-                                            ><i title="Report post"
+                                            ><i title="Reported post"
                                                                                                class="fas fa-flag m-0 report_post_icon" style="color:crimson;"></i>
                                         </button>
                                     </div>
@@ -253,5 +253,6 @@
 @include('pages.confirm')
 @include('partials.report_modal')
 @include('partials.empty_comment')
+@include('partials.postpage_toaster')
 @endsection
 

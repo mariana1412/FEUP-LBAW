@@ -127,7 +127,6 @@ function confirmEdit(comment_id,container,type){
         addDeleteCommentListeners();
         addListeners();
         addEditListeners();
-        updateSortedBy("Sort by");
         }
         else{
             empty_warning.show();
