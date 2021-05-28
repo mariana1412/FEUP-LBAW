@@ -66,6 +66,6 @@ class HelperController{
 
     public static function single_commentAsHtml($comment_id,$user_id){
         $comment = HelperController::getCommentInfo($comment_id,$user_id);
-        return view("partials.single_comment",["comment"=>$comment[0]]);
+        return view("partials.single_comment",["comment"=>$comment]);
     }
 }    

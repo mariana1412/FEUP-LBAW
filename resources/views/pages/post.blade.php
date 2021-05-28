@@ -9,7 +9,6 @@
     <script type="text/javascript" src="{{ URL::asset('js/post_comments/add_comment.js') }}" defer></script>
     <script type="text/javascript" src="{{ URL::asset('js/post_comments/delete_comment.js') }}" defer></script>
     <script type="text/javascript" src="{{ URL::asset('js/post_comments/edit_comment.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/post_comments/sort_comments.js') }}" defer></script>
     <script type="text/javascript" src="{{ URL::asset('js/post_comments/show_threads.js') }}" defer></script>
     <script type="text/javascript" src="{{ URL::asset('js/post_comments/load_more.js') }}" defer></script>
     <script type="text/javascript" src="{{ URL::asset('js/post_comments/follow_tag.js') }}" defer></script>

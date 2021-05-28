@@ -74,7 +74,7 @@ class CommentController extends Controller
                     'post_id' => $request->input('post_id')
                 ]);
                 //$comments = Comment::getPostComments($post_id,"desc",1);
-                return Comment::single_commentAsHtml($cid, Auth::user()->id);
+                return HelperController::single_commentAsHtml($cid, Auth::user()->id);
             }
         }
         return response()->json(['status' => "Error encountered when adding commment!"])->setStatusCode(400);
