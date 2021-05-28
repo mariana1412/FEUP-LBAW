@@ -62,9 +62,11 @@ function report_content(type,id,value){
                 console.log(text['status']);
                 if(type=="comment"){
                     hideReportButtonFromComment(id);
+                    show_toaster("Comment reported successfully!");
                 }
                 else
                     hideReportButtonFromPost();
+                    show_toaster("Post reported successfully!");
             }
             else{
                 console.log(text['status']);

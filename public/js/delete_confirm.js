@@ -22,3 +22,8 @@ function delete_post(){
     request.setRequestHeader('X-CSRF-TOKEN',token.getAttribute("content"));
     request.send();
 }
+
+function show_toaster(text){
+    toaster_basic_node.getElementsByClassName("toast-body")[0].innerText = text;
+    toaster_basic_obj.show();
+}
