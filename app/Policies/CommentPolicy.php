@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Models\Comment;
 
 
@@ -25,6 +26,18 @@ class CommentPolicy
         if($comment == null) return false;
         return Auth::check() && $comment->user_id !== Auth::user()->id;
     }
+
+    public static function show(Comment $comment){
+        // blocked users cant see posts
+        if($comment == null) return false;
+        if(Auth::check()){
+            $blocked_users = DB::table("block_user")->where('blocked_user',$comment->user_id)->where("blocking_user",Auth::user()->id)->count();
+            $blocking_users = DB::table("block_user")->where('blocked_user',Auth::user()->id)->where("blocking_user",$comment->user_id)->count();
+            return $blocked_users == 0 && $blocking_users == 0;
+        }
+        return false;
+    }
+    
 
 
 }

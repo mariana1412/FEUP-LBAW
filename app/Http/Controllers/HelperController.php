@@ -6,6 +6,7 @@ use App\Models\Tag;
 use App\Models\AuthenticatedUser;
 use App\Models\Comment;
 use App\Policies\PostPolicy;
+use App\Policies\CommentPolicy;
 use App\Models\Report;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
@@ -23,7 +24,8 @@ class HelperController{
         $result = array();
         foreach($comments as $comment){
             $temp = HelperController::getCommentInfo($comment->id,$user_id);
-            $result[] = $temp;
+            if($temp != null)
+                $result[] = $temp;
         }
         return $result;
     }
@@ -41,6 +43,8 @@ class HelperController{
 
     public static function getCommentInfo($comment_id,$user_id){
         $comment = Comment::find($comment_id);
+        if(!CommentPolicy::show($comment))
+            return null;
         $votes = DB::table("vote_comment")->where("comment_id",$comment->id);
         $temp = $votes->get()->count();
         $likes = $votes->where("like",true)->get()->count();
