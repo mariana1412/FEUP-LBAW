@@ -48,7 +48,7 @@
                     <div class="mt-2 col-10 justify-content-center d-flex">
                         <div class="row thumbnail-image">
                             <img src="{{URL::asset($metadata['thumbnail'])}}"
-                                 class="justify-content-conter" alt="alt src">
+                                 class="justify-content-conter" alt="Post thumbnail">
                         </div>
                     </div>
                 </div>
