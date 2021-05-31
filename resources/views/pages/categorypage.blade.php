@@ -19,4 +19,5 @@
         </div>
         @include('partials.filterBox')
     </div>
+@include('partials.postpage_toaster')
 @endsection

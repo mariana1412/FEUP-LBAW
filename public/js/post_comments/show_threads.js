@@ -42,11 +42,13 @@ function show_replies(element){
         let temp = aux.getElementsByClassName("comment_thread_section")[0];
         if(temp.classList.contains("d-none")){
             temp.classList.remove("d-none");
-            element.innerHTML = `<i class="fas fa-chevron-down my-0" style="cursor:pointer;"></i>&nbspHide`;
+            element.innerHTML = `<i class="fas fa-chevron-down my-0" style="cursor:pointer;"></i>&nbspHide thread`;
         }
         else{
             temp.classList.add("d-none");
-            element.innerHTML = `<i class="fas fa-chevron-right my-0" style="cursor:pointer;"></i>&nbspShow`;
+            var count = element.parentNode.getElementsByClassName("thread_count")[0].innerText;
+            var rep = parseInt(count) == 1? "1 reply" : parseInt(count)==0?"thread":parseInt(count)>1?count + " replies":"";
+            element.innerHTML = `<i class="fas fa-chevron-right my-0" style="cursor:pointer;"></i>&nbspShow ` + rep;
         }
         let reply = element.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.getElementsByClassName("thread-reply")[0];
         if(reply.classList.contains("d-none")){

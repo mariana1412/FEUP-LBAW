@@ -81,10 +81,14 @@
                                             @endif
                                         @endif
                                     @endauth
-                                    <h3 class="post-page-comment-interactions my-0">{{$comment->thread_count}} <i
+                                    <h3 class="post-page-comment-interactions my-0 thread_count">{{$comment->thread_count}} <i
                                             class="far fa-comments"></i></h3>
-                                    <h3 class="post-page-comment-interactions my-0 px-3 show-hide-replies"> <i
-                                            class="fas fa-chevron-right my-0" style="cursor:pointer;"></i>{!! "&nbsp;" !!}Show</h3>
+                                    <h3 class="post-page-comment-interactions my-0 px-3 show-hide-replies"> 
+                                    @if($comment->thread_count == 0)
+                                    <i class="fas fa-chevron-right my-0" style="cursor:pointer;"></i>{!! "&nbsp;" !!}Show thread</h3>
+                                    @else
+                                    <i class="fas fa-chevron-right my-0" style="cursor:pointer;"></i>{!! "&nbsp;" !!}Show {{$comment->thread_count}} {{$comment->thread_count==1?"reply":"replies"}}</h3>
+                                    @endif
 
 
                                 </div>

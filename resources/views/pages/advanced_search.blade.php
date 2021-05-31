@@ -20,4 +20,5 @@
         </div>
         @include('partials.filterBoxWCategory')
     </div>
+@include('partials.postpage_toaster')
 @endsection
