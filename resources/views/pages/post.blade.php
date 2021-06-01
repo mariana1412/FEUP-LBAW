@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <script type="text/javascript" src="{{ URL::asset('js/toaster.js') }}" defer></script>
     <script type="text/javascript" src="{{ URL::asset('js/post_comments/comments_aux.js') }}" defer></script>
     <script type="text/javascript" src="{{ URL::asset('js/delete_confirm.js') }}" defer></script>
     <script type="text/javascript" src="{{ URL::asset('js/save_post.js') }}" defer></script>
