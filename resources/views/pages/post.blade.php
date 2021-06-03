@@ -224,7 +224,7 @@
                     </div>
                     @endif
                 @endauth
-                <span id="comment-section">
+                <div id="comment-section">
             @if(count($metadata['comments']) > 0)
                         @include("partials.comments",["comments"=>$metadata['comments']])
                     @else
@@ -232,7 +232,7 @@
                     <p><b id="empty-comments">There are no comments in this post. Be the first to leave your thoughts!</b></p>
                 </div>
                     @endif
-            </span>
+            </div>
 
 
                 @if($metadata['comment_count']>5)

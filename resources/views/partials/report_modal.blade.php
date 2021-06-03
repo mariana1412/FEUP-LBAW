@@ -1,5 +1,5 @@
 <div class="modal fade" id="report" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    aria-hidden="true">
     <span hidden class="content_id"></span>
     <span hidden class="content_type"></span>
     <div class="modal-dialog modal-dialog-centered justify-content-center d-flex">
