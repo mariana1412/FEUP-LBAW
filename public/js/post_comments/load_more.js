@@ -30,6 +30,7 @@ function loadMore(){
         addDeleteCommentListeners();
         addEditListeners();
         addShowThreadListeners();
+        addReportListeners();
         let comments = comment_section.querySelectorAll('.comment-container');
         if(comments != null) comments.forEach((comment) => addCommentsEventListeners(comment));
         let threads = comment_section.querySelectorAll('.thread-container');
