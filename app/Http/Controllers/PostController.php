@@ -397,7 +397,8 @@ class PostController extends Controller
             $post = Post::find($post_id);
             //if(Auth::user()->id == $post->user_id){
                 if($post != null){
-                    $this->authorize("delete",$post);
+                    if(!PostPolicy::delete_post_policy(Auth::user(),$post))
+                        return 'post/' + $post_id;
                     if ($post->delete()) {
                         Session::put('deleted_post',true);
                         return ''; //dar return da view da homepage

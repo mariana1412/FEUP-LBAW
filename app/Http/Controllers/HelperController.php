@@ -81,6 +81,6 @@ class HelperController{
     }
 
     public static function remove_onclick_from_text($string){
-        return preg_replace("#onclick=\"\(.\)\"#","",$string);
+        return preg_replace("#onclick=(\"|')\(.\)(\"|')#","",$string);
     }
 }
