@@ -79,4 +79,8 @@ class HelperController{
         $comment = HelperController::getCommentInfo($comment_id,$user_id);
         return view("partials.single_comment",["comment"=>$comment]);
     }
+
+    public static function remove_onclick_from_text($string){
+        return preg_replace("#onclick=\"\(.\)\"#","",$string);
+    }
 }

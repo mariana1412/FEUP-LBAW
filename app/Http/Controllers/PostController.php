@@ -224,7 +224,7 @@ class PostController extends Controller
         $metadata = ['comment_count'=>$comment_count,'author'=>$USER,'views' => $post->n_views,
                      'likes' => $likes, 'dislikes' => $dislikes, 'tags' => $tags,'date'=>$date,'thumbnail' => $thumbnail,'comments'=>$comments, 'liked' => $liked,"isSaved"=>$isSaved];
 
-
+        $post->content = HelperController::remove_onclick_from_text($post->content);
         return view('pages.post', ['isOwner' => $isOwner, 'needsFilter' => 0,'post' => $post,"metadata"=> $metadata,"user_id" => $user_id]);
 
     }
