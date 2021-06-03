@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\DB;
 class HelperController{
     public static function getPostComments($post_id,$date_order,$offset){
         $user_id = Auth::check()?Auth::user()->id:0;
-        $comments = Comment::where("post_id",$post_id)->orderBy("comment_date",$date_order)->get()->forPage($offset,5)->all();
+        $comments = Comment::where("post_id",$post_id)->orderBy("comment_date",$date_order)->take($offset*5 + 5)->get()->all();
         $result = array();
         foreach($comments as $comment){
             $temp = HelperController::getCommentInfo($comment->id,$user_id);

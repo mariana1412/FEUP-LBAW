@@ -195,7 +195,7 @@ class PostController extends Controller
         $USER = AuthenticatedUser::find($post->user_id);
 
         //Get comment count,likes and dislikes
-        $comments = HelperController::getPostComments($id,"desc",1);
+        $comments = HelperController::getPostComments($id,"desc",0);
 
         $comment_count = Comment::where('post_id',$id)->get()->count();
         $votes = DB::table("vote_post")->where("post_id",$id);
