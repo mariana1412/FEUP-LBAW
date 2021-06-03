@@ -32,6 +32,8 @@ function addComment(){
             addShowThreadListeners();
             updateCommentCount(1);
             EmptyCommentsVisibility(true);
+            let comments = document.querySelectorAll('.comment-container');
+            if(comments != null) comments.forEach((comment) => addCommentsEventListeners(comment));
         }
         
         

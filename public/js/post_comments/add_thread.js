@@ -46,6 +46,8 @@ function addThread(comment_id,content){
                         let cont = containers[i].getElementsByClassName("comment_thread_section")[0];
                         temp_threads += cont.innerHTML;
                         cont.innerHTML = temp_threads;
+                        let threads = cont.querySelectorAll('.thread-container');
+                        if(threads != null) threads.forEach((comment) => addCommentsEventListeners(comment))
                         break;
                     }
             }

@@ -6,10 +6,14 @@ if(thread_comments != null) thread_comments.forEach((comment) => addCommentsEven
 
 
 function addCommentsEventListeners(comment){
-    let upVoteComment = comment.querySelector('.post-page-comment-thumbs-up-button')
-    let downVoteComment = comment.querySelector('.post-page-comment-thumbs-down-button')
-    if(upVoteComment != null) upVoteComment.addEventListener('click', handleUpVoteComment.bind(comment))
-    if(downVoteComment != null) downVoteComment.addEventListener('click',handleDownVoteComment.bind(comment))
+    let owner_id= comment.getElementsByClassName("owner_id")[0].innerText;
+    let user_id = document.getElementById("user_ID").innerText;
+    if((owner_id != user_id) && user_id!="0"){
+        let upVoteComment = comment.querySelector('.post-page-comment-thumbs-up-button')
+        let downVoteComment = comment.querySelector('.post-page-comment-thumbs-down-button')
+        if(upVoteComment != null) upVoteComment.addEventListener('click', handleUpVoteComment.bind(comment))
+        if(downVoteComment != null) downVoteComment.addEventListener('click',handleDownVoteComment.bind(comment))
+    }
 }
 
 function handleUpVoteComment(){

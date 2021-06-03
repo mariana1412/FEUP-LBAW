@@ -1,5 +1,6 @@
 @if(!($comment->comment_id==null?false:true))
     <span class="comment-container">
+                <div hidden class="owner_id">{{$comment->user_id}}</div>
                 <div class="row justify-content-center px-4 mx-1">
                     <div class="col-10 post-page-comment pt-3 pb-2 px-3 mt-2 comment_box">
                     <div class="row px-2 py-0">
@@ -94,7 +95,7 @@
             </div>
             <span class="comment_thread_section d-none">
                 @foreach($comment->threads as $thread)
-                    @include('partials.single_comment',["comment"=>$thread,'user_id'=>$user_id])
+                    @include('partials.single_comment',["comment"=>$thread])
                 @endforeach
             </span>
             @auth
@@ -124,6 +125,7 @@
     </span>
 @else
     <span class="thread-container">
+                    <div hidden class="owner_id">{{$comment->user_id}}</div>
                     <div class="row justify-content-center px-4 mx-1 thread-section">
                         <div class="col-10 mx-0 px-0 comment_box">
                             <div class="row justify-content-end comment-replies mx-0 px-0">

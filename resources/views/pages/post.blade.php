@@ -101,8 +101,7 @@
                                    href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "type=" . rawurlencode(ucfirst($post->type))}}"><b>{{ucfirst($post->type)}}</b></a>
                                 
                             </div>
-                        </div>    
-                        <div class="row justify-content-start align-items-center">
+                    
                             <h2 class="col-auto post-page-post-tags-indicator m-0 p-0">Category: </h2>
                             <div class="col-auto  px-2 m-1">
                                 <a style="color:#0C1D1C;font-weight:400;"
@@ -227,7 +226,7 @@
                 @endauth
                 <span id="comment-section">
             @if(count($metadata['comments']) > 0)
-                        @include("partials.comments",["comments"=>$metadata['comments'],"user_id"=>$user_id])
+                        @include("partials.comments",["comments"=>$metadata['comments']])
                     @else
                         <div class="container-fluid d-flex col-10 justify-content-center mt-3">
                     <p><b id="empty-comments">There are no comments in this post. Be the first to leave your thoughts!</b></p>
