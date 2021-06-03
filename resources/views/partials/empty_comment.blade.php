@@ -8,7 +8,7 @@
                         aria-label="Close"></button>
             </div>
             <div class="modal-body ms-3">
-                <p>Empty comments are not allowed!</p>
+                <p class="modal_message">Empty comments are not allowed!</p>
             </div>
             <div class="row justify-content-end d-flex me-3 mb-3 ">
                 <button type="submit" class="col-2 btn custom-button" data-bs-dismiss="modal">Ok</button>

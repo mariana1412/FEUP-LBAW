@@ -15,6 +15,7 @@
     <script  src="{{ URL::asset('js/post_comments/follow_tag.js') }}" defer></script>
     <script  src="{{ URL::asset('js/votePost.js') }}" defer></script>
     <script  src="{{ URL::asset('js/voteComment.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/generic_error_message.js') }}" defer></script>
     <div class="container post">
         <p hidden id="post_ID">{{$post->id}}</p>
         <p hidden id="user_ID">{{$user_id}}</p>

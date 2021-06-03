@@ -18,7 +18,8 @@ function addComment(){
     request.onload = function (){
         result = "";
         if(request.status==400){
-            alert("Error adding comment");
+            show_generic_warning("Internal error when adding comment!");
+            //alert("Error adding comment");
             content.setAttribute("rows","2");
             return;
         }
@@ -44,8 +45,7 @@ function addComment(){
     request.setRequestHeader('X-CSRF-TOKEN',token.getAttribute("content"));
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     if(content.value=="" || content.value.match("^\\s+$")){
-        //alert("Empty comments are not allowed!");
-        empty_warning.show();
+        show_generic_warning("Empty comments are not allowed!");
         return;
     }
     request.send(encodeForAjax({content:content.value,post_id:id.innerText,user_id:userID.innerText}));

@@ -31,7 +31,7 @@ function addThread(comment_id,content){
     request.onload = function (){
         result = "";
         if(request.status==400){
-            alert("Error adding comment");
+            show_generic_warning("Internal error when trying to add comment!","Error");
             content.setAttribute("rows","1");
             return;
         }
@@ -65,8 +65,7 @@ function addThread(comment_id,content){
         
     };
     if(content.value=="" || content.value.match("^\\s+$")){
-        //alert("Empty comments are not allowed!");
-        empty_warning.show();
+        show_generic_warning("Empty comments are not allowed!");
         return;
     }
     request.setRequestHeader('X-CSRF-TOKEN',token.getAttribute("content"));
