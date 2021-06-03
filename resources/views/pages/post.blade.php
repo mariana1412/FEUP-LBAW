@@ -49,7 +49,7 @@
                     <div class="mt-2 col-10 justify-content-center d-flex">
                         <div class="row thumbnail-image">
                             <img src="{{URL::asset($metadata['thumbnail'])}}"
-                                 class="justify-content-conter" alt="Post thumbnail">
+                                 class="justify-content-center" alt="Post thumbnail"  style="width:1600px;height:665px;">
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                     <h1 class="post-page-post-title">{{$post->is_spoiler?"[SPOILER]":""}}{{$post->title}}</h1>
                 </div>
 
-                <div class="row justify-content-between">
+                <div class="row px-0 justify-content-between">
                     <div class="container-fluid d-flex px-0 col-4 mt-1">
                         <h2 class="post-page-post-author-date">by <a
                                 href="{{route('profile',['id'=>$metadata['author']->id])}}">{{$metadata['author']->name}}</a>, {{$metadata['date']}}
@@ -88,7 +88,7 @@
                 </div>
 
                 <div class="container-fluid d-flex col-10 justify-content-left mt-2">
-                    <p class="post-page-post-text">{{$post['content']}}
+                    <p class="post-page-post-text">{{strip_tags($post['content'],"<div><p><b><strong><i><u>")}}
                     </p>
                 </div>
 
@@ -96,15 +96,17 @@
                     <div class="col-10">
                         <div class="row justify-content-start align-items-center">
                             <h2 class="col-auto post-page-post-tags-indicator m-0 p-0">Type: </h2>
-                            <div class="col-auto  px-2 m-1">
+                            <div class="col-auto px-2 m-1">
                                 <a style="color:#0C1D1C;font-weight:400;"
-                                   href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "type=" . rawurlencode(ucfirst($post->type))}}">{{ucfirst($post->type)}}</a>
+                                   href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "type=" . rawurlencode(ucfirst($post->type))}}"><b>{{ucfirst($post->type)}}</b></a>
                                 
                             </div>
+                        </div>    
+                        <div class="row justify-content-start align-items-center">
                             <h2 class="col-auto post-page-post-tags-indicator m-0 p-0">Category: </h2>
                             <div class="col-auto  px-2 m-1">
                                 <a style="color:#0C1D1C;font-weight:400;"
-                                   href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "category=" . rawurlencode(ucfirst($post->category))}}">{{ucfirst($post->category)}}</a>
+                                   href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "category=" . rawurlencode(ucfirst($post->category))}}"><b>{{ucfirst($post->category)}}</b></a>
                                
                             </div>
                         </div>
@@ -177,7 +179,7 @@
                                         <button
                                             class="post-page-post-report-button btn ms-0 me-0 py-0 px-0 reported report_action report_post_button"
                                             ><i title="Reported post"
-                                                                                               class="fas fa-flag m-0 report_post_icon" style="color:crimson;"></i>
+                                                                                               class="fas fa-flag m-0 report_post_icon" style="color:darkred;"></i>
                                         </button>
                                     </div>
                                 @endif

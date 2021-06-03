@@ -101,7 +101,7 @@ function hideReportButtonFromComment(id){
             let element = comments[i];
             if(element.innerText == id){
                 let temp = element.parentNode.getElementsByClassName("report_action")[0];
-                temp.setAttribute("style","color:crimson;");
+                temp.setAttribute("style","color:darkred;");
                 temp.classList.remove("far");
                 temp.classList.add("fas");
                 temp.classList.add("reported");

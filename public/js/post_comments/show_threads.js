@@ -46,9 +46,7 @@ function show_replies(element){
         }
         else{
             temp.classList.add("d-none");
-            var count = element.parentNode.getElementsByClassName("thread_count")[0].innerText;
-            var rep = parseInt(count) == 1? "1 reply" : parseInt(count)==0?"thread":parseInt(count)>1?count + " replies":"";
-            element.innerHTML = `<i class="fas fa-chevron-right my-0" style="cursor:pointer;"></i>&nbspShow ` + rep;
+            element.innerHTML = `<i class="fas fa-chevron-right my-0" style="cursor:pointer;"></i>&nbspShow thread`;
         }
         let reply = element.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.getElementsByClassName("thread-reply")[0];
         if(reply.classList.contains("d-none")){

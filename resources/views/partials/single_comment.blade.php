@@ -77,20 +77,15 @@
                                                 <span hidden class="content_id comment_content">{{$comment->id}}</span>
                                                 <i title="Report comment"
                                                    class="fas fa-flag my-0 post-page-report-comment pe-3 reported report_action"
-                                                    style="color:crimson;"></i>
+                                                    style="color:darkred;"></i>
                                             @endif
                                         @endif
                                     @endauth
                                     <h3 class="post-page-comment-interactions my-0 thread_count">{{$comment->thread_count}} <i
                                             class="far fa-comments"></i></h3>
-                                    <h3 class="post-page-comment-interactions my-0 px-3 show-hide-replies"> 
-                                    @if($comment->thread_count == 0)
-                                    <i class="fas fa-chevron-right my-0" style="cursor:pointer;"></i>{!! "&nbsp;" !!}Show thread</h3>
-                                    @else
-                                    <i class="fas fa-chevron-right my-0" style="cursor:pointer;"></i>{!! "&nbsp;" !!}Show {{$comment->thread_count}} {{$comment->thread_count==1?"reply":"replies"}}</h3>
-                                    @endif
-
-
+                                    <h3 class="post-page-comment-interactions my-0 px-3 show-hide-replies" style="cursor:pointer;width:fit-content;"> 
+                                        <i class="fas fa-chevron-right my-0" ></i>{!! "&nbsp;" !!}Show thread
+                                    </h3>
                                 </div>
                             </div>
                         </div>
@@ -108,13 +103,13 @@
                     <div class="row justify-content-end comment-replies mx-0 px-0">
                         <div class="col-11 post-page-comment-reply-editor px-0 mx-0 mt-1">
                             <div class="row px-0 mx-0 reply_textarea_container">
-                                <div class="col-11 d-flex mx-0 px-0 reply_textarea">
+                                <div class="col-lg-11 col-md-12 col-sm-12 d-flex mx-0 px-0 reply_textarea">
                                         <textarea
                                             class="container form-control post-page-add-comment-reply w-100 add-thread"
                                             id="add-comment" rows="1"
                                             placeholder="Answer in thread"></textarea>
                                 </div>
-                                <div class="col-1 d-flex mx-0 px-0">
+                                <div class="col-lg-1 col-md-12 col-sm-12 d-flex mx-0 px-0">
                                     <span class="thread_comment_id" hidden>{{$comment->id}}</span>
                                     <button
                                         class="post-page-comment-button btn-sm btn-block m-0 mt-0 add_thread_button">Comment</button>
