@@ -106,7 +106,7 @@
                                 <div class="col-lg-11 col-md-12 col-sm-12 d-flex mx-0 px-0 reply_textarea">
                                         <textarea
                                             class="container form-control post-page-add-comment-reply w-100 add-thread"
-                                            id="add-comment" rows="1"
+                                         rows="1"
                                             placeholder="Answer in thread"></textarea>
                                 </div>
                                 <div class="col-lg-1 col-md-12 col-sm-12 d-flex mx-0 px-0">

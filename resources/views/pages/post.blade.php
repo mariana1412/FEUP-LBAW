@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-    <script type="text/javascript" src="{{ URL::asset('js/toaster.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/post_comments/comments_aux.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/delete_confirm.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/save_post.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/report_content.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/post_comments/add_thread.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/post_comments/add_comment.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/post_comments/delete_comment.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/post_comments/edit_comment.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/post_comments/show_threads.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/post_comments/load_more.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/post_comments/follow_tag.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/votePost.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/voteComment.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/toaster.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/post_comments/comments_aux.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/delete_confirm.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/save_post.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/report_content.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/post_comments/add_thread.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/post_comments/add_comment.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/post_comments/delete_comment.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/post_comments/edit_comment.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/post_comments/show_threads.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/post_comments/load_more.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/post_comments/follow_tag.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/votePost.js') }}" defer></script>
+    <script  src="{{ URL::asset('js/voteComment.js') }}" defer></script>
     <div class="container post">
         <p hidden id="post_ID">{{$post->id}}</p>
         <p hidden id="user_ID">{{$user_id}}</p>
@@ -49,7 +49,7 @@
                     <div class="mt-2 col-10 justify-content-center d-flex">
                         <div class="row thumbnail-image">
                             <img src="{{URL::asset($metadata['thumbnail'])}}"
-                                 class="justify-content-center" alt="Post thumbnail"  style="width:1600px;height:665px;">
+                                 class="justify-content-center" alt="Post thumbnail"  >
                         </div>
                     </div>
                 </div>
@@ -216,7 +216,7 @@
                             </div>
                             <div class="row px-0 mx-0 justify-content-end">
                                 <div class="col-auto px-0">
-                                    <button id="add_comment_button" class="post-page-comment-button btn mt-1 mb-2">
+                                    <button id="add_comment_button" class="post-page-comment-button btn mt-1 mb-2" data-toggle="tooltip" data-placement="bottom" title="Add comment">
                                         Comment
                                     </button>
                                 </div>
