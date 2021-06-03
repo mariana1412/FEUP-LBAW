@@ -19,6 +19,7 @@ function addComment(){
         result = "";
         if(request.status==400){
             alert("Error adding comment");
+            content.setAttribute("rows","2");
             return;
         }
         else if(request.status==200){
@@ -32,8 +33,10 @@ function addComment(){
             addShowThreadListeners();
             updateCommentCount(1);
             EmptyCommentsVisibility(true);
+            addThreadTextListener();
             let comments = document.querySelectorAll('.comment-container');
             if(comments != null) comments.forEach((comment) => addCommentsEventListeners(comment));
+            content.setAttribute("rows","2");
         }
         
         
@@ -47,3 +50,38 @@ function addComment(){
     }
     request.send(encodeForAjax({content:content.value,post_id:id.innerText,user_id:userID.innerText}));
 }
+
+
+
+
+
+function addCommentTextListener(){
+    let c = document.getElementById("add-comment");
+    if(c){
+        c.addEventListener("keyup",function(e){
+            e.preventDefault();
+            if (e.keyCode === 13) {
+                let rows = parseInt(c.getAttribute("rows"));
+                c.setAttribute("rows",rows+1);
+            }
+        });
+    }
+}
+
+function addThreadTextListener(){
+    let c = document.getElementsByClassName("add-thread");
+    if(c && c.length>0){
+        for(let i = 0;i<c.length;i++){
+            let temp = c[i];
+            temp.addEventListener("keyup",function(e){
+                if (e.keyCode === 13) {
+                    let rows = parseInt(temp.getAttribute("rows"));
+                    temp.setAttribute("rows",rows+1);
+                }
+            });
+        }
+    }
+}
+
+addCommentTextListener();
+addThreadTextListener();

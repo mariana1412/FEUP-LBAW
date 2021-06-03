@@ -32,6 +32,7 @@ function addThread(comment_id,content){
         result = "";
         if(request.status==400){
             alert("Error adding comment");
+            content.setAttribute("rows","1");
             return;
         }
         else if(request.status==200){
@@ -59,6 +60,7 @@ function addThread(comment_id,content){
             addEditListeners();
             addReportListeners();
             openThreads(comment_id);
+            content.setAttribute("rows","1");
         }
         
     };

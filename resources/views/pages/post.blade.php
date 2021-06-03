@@ -208,7 +208,6 @@
                         <div class="col-10 mx-0 px-0" style="border-radius:5px;">
                             <div class="row m-0 p-0">
                                 <div class="d-flex mx-0 px-0">
-                                    <!--<label class="post-page-add-comment-label" for="add-comment">Add comment...</label>-->
                                     <textarea class="container form-control post-page-add-comment w-100 add-comment"
                                               id="add-comment" rows="2" placeholder="Join the discussion"></textarea>
                                 </div>
