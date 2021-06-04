@@ -125,7 +125,7 @@
             <div class="navbar-collapse collapse " id="navbar-filter" navbar>
                 <ul class="navbar-nav custom-filterBox">
                     <li class="nav-item d-lg-none container text-center w-100">
-                        <form class="pt-2 advanced_search" action="" method="">
+                        <form class="pt-2 advanced_search">
                             <div class="input-group rounded">
                                 <input type="search" class="form-control" placeholder="Search" aria-label="Search"
                                        aria-describedby="search-addon"/>

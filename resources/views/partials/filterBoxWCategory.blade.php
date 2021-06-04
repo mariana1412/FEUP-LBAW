@@ -3,11 +3,11 @@
 <div class="custom-filterBox filterbox col-xl-lg-1 col-md-3 px-auto  d-flex d-lg-block d-none justify-content-center" style="margin-top: 6em;">
     <div class="container  col-md-3">
         <h4 class="text-center"> Search </h4>
-        <form class="pt-2" action="" method="get">
+        <form class="pt-2">
             <div class="input-group rounded">
                 <input type="text" id="search" class="form-control" placeholder="Search" aria-label="Search"
-                       aria-describedby="search-addon"/>
-                <span class="input-group-text border-0" id="search-addon" style="background-color:#fcf3ee;">
+                       />
+                <span class="input-group-text border-0" style="background-color:#fcf3ee;">
                             <i title="Search" class="fas fa-search"></i>
                         </span>
             </div>
@@ -30,21 +30,21 @@
             <input type="date" class="form-control mt-0" id="endDate2" style="cursor:pointer;">
             @auth
                 <div class="form-check mt-4">
-                    <input class="form-check-input" type="checkbox" value="" id="checkPeople"
+                    <input class="form-check-input" type="checkbox" value="" 
                            style="cursor:pointer;">
-                    <label class="form-check-label" style="margin-left: 10px;" for="checkPeople">
+                    <label class="form-check-label" style="margin-left: 10px;" >
                         Only people I follow
                     </label>
                 </div>
                 <div class="form-check mt-4">
-                    <input class="form-check-input" type="checkbox" value="" id="checkTags" style="cursor:pointer;">
-                    <label class="form-check-label" style="margin-left: 10px;" for="checkTags">
+                    <input class="form-check-input" type="checkbox" value=""  style="cursor:pointer;">
+                    <label class="form-check-label" style="margin-left: 10px;" >
                         Only tags I follow
                     </label>
                 </div>
                 <div class="form-check mt-4">
-                    <input class="form-check-input" type="checkbox" value="" id="checkMyPosts" style="cursor:pointer;">
-                    <label class="form-check-label" style="margin-left: 10px;" for="checkMyPosts">
+                    <input class="form-check-input" type="checkbox" value=""  style="cursor:pointer;">
+                    <label class="form-check-label" style="margin-left: 10px;" >
                         Only my posts
                     </label>
                 </div>
