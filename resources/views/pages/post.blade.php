@@ -121,7 +121,7 @@
                                 <div class="col-auto post-page-tag-container px-2 m-1">
                                     <span hidden class="tag_id">{{$tag->id}}</span>
                                     <a class="post-page-post-tag"
-                                       href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "search=" . rawurlencode($tag->name)}}">{{$tag->name}}</a>
+                                       href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "search=" . rawurlencode($tag->name)}}" data-toggle="tooltip" data-placement="bottom" title="Search post by tag">{{$tag->name}}</a>
                                     @auth
                                         <i class="{{$tag->isSaved?"fas":"far"}} fa-star follow_tag_icon"
                                            style="cursor:pointer;"
