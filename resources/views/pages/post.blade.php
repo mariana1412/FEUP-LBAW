@@ -68,20 +68,20 @@
 
                     <div class="container-fluid d-flex col-2 mt-1">
                         <div class="pe-3">
-                            <h3 class="post-page-post-interactions">{{$metadata['views']}} <i class="far fa-eye"></i>
+                            <h3 class="post-page-post-interactions" data-toggle="tooltip" data-placement="bottom" title="Views">{{$metadata['views']}} <i class="far fa-eye"></i>
                             </h3>
                         </div>
                         <div class="pe-3">
-                            <h3 class="post-page-post-interactions"><span class="up">{{$metadata['likes']}}</span> <i
+                            <h3 class="post-page-post-interactions" data-toggle="tooltip" data-placement="bottom" title="Likes"><span class="up">{{$metadata['likes']}}</span> <i
                                     class="far fa-thumbs-up"></i></h3>
                         </div>
                         <div class="pe-3">
-                            <h3 class="post-page-post-interactions"><span class="down">{{$metadata['dislikes']}}</span>
+                            <h3 class="post-page-post-interactions" data-toggle="tooltip" data-placement="bottom" title="Dislikes"><span class="down">{{$metadata['dislikes']}}</span>
                                 <i class="far fa-thumbs-down"></i></h3>
                         </div>
                         <div class="pe-3">
                             <h3 class="post-page-post-interactions"
-                                id="post_comment_count">{{$metadata['comment_count']}} <i class="far fa-comments"></i>
+                                id="post_comment_count" data-toggle="tooltip" data-placement="bottom" title="Comments">{{$metadata['comment_count']}} <i class="far fa-comments"></i>
                             </h3>
                         </div>
                     </div>
@@ -99,14 +99,14 @@
                             <h2 class="col-auto post-page-post-tags-indicator m-0 p-0">Type: </h2>
                             <div class="col-auto px-2 m-1">
                                 <a style="color:#0C1D1C;font-weight:400;"
-                                   href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "type=" . rawurlencode(ucfirst($post->type))}}"><b>{{ucfirst($post->type)}}</b></a>
+                                   href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "type=" . rawurlencode(ucfirst($post->type))}}" data-toggle="tooltip" data-placement="bottom" title="Search post by type"><b>{{ucfirst($post->type)}}</b></a>
                                 
                             </div>
                     
                             <h2 class="col-auto post-page-post-tags-indicator m-0 p-0">Category: </h2>
                             <div class="col-auto  px-2 m-1">
                                 <a style="color:#0C1D1C;font-weight:400;"
-                                   href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "category=" . rawurlencode(ucfirst($post->category))}}"><b>{{ucfirst($post->category)}}</b></a>
+                                   href="{{route("homepage")."/search/filters?peopleFollow=false&tagFollow=false&myPosts=false&" . "category=" . rawurlencode(ucfirst($post->category))}}" data-toggle="tooltip" data-placement="bottom" title="Search post by category"><b>{{ucfirst($post->category)}}</b></a>
                                
                             </div>
                         </div>
@@ -155,7 +155,7 @@
                                     <div class="col-auto px-0 mx-0">
                                         <button
                                             class="post-page-post-thumbs-down-button btn ms-0 me-4 px-0 post-down-vote">
-                                            <i title="Dislike post" class="fas fa-thumbs-down m-0"></i></button>
+                                            <i title="Like post" class="fas fa-thumbs-down m-0"></i></button>
                                     </div>
                                 @else
                                     <div class="col-auto px-0 mx-0">

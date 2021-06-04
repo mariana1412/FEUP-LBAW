@@ -35,6 +35,7 @@ function addComment(){
             updateCommentCount(1);
             EmptyCommentsVisibility(true);
             addThreadTextListener();
+            addReportListeners();
             let comments = document.querySelectorAll('.comment-container');
             if(comments != null) comments.forEach((comment) => addCommentsEventListeners(comment));
             content.setAttribute("rows","2");

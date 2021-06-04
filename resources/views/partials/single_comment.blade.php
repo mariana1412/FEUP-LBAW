@@ -206,7 +206,7 @@
 
                                                                 <i title="Reported comment"
                                                                 class="fas fa-flag my-0 post-page-report-comment pe-3 reported report_action"
-                                                                    style="color:crimson;"></i>
+                                                                    style="color:darkred;"></i>
                                                             @endif
                                                         </div>
                                                         @endif
