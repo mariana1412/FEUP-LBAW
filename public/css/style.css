@@ -30,7 +30,6 @@
 .navbar-custom {
     border-radius: 0;
     background-color: #0c1d1c;
-    -webkit-transition: all 0.2s linear 0s;
     transition: all 0.2s linear 0s;
 }
 
@@ -341,13 +340,10 @@ hr.solid {
 .postsCards .card {
     background-color: #8ab5b1;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
-    transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
-    0.3s box-shadow,
-    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
     cursor: pointer;
     position: relative;
     min-width: 15rem;
-    padding: 0 auto;
+    padding: 0;
 }
 
 .postsCards .card:hover {
@@ -438,7 +434,7 @@ hr.solid {
 .pagination-loadmore a.active {
     background-color: #0c1d1c;
     color: white;
-    border: 1px solid #0c1d1c;
+    border: 1px solid;
 }
 
 .pagination-loadmore a:hover:not(.active) {
@@ -499,9 +495,6 @@ hr.solid {
 .postsCards .card {
     background-color: #8ab5b1;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
-    transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
-    0.3s box-shadow,
-    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
     cursor: pointer;
     position: relative;
 }

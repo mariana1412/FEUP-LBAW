@@ -26,7 +26,7 @@
                                                 {{ Str::limit(wordwrap($posts[$i]->content, 25),$limit)}}</p>
                                             <strong> (read more)</strong>
                                             <p class="card-text mt-3"><small>by <a href='/user/{{$posts[1]->user_id}}'
-                                                                                   id="authorName">{{$posts[$i]->author}}</a>,
+                                                                                   class="authorName">{{$posts[$i]->author}}</a>,
                                                     {{date("F j, Y", strtotime($posts[$i]->created_at))}}</small></p>
                                         </div>
                                     </div>

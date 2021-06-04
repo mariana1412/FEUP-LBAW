@@ -1,5 +1,5 @@
-<script type="text/javascript" src="{{ URL::asset('js/utils.js') }}" defer></script>
-<script type="text/javascript" src="{{ URL::asset('js/filterBox.js') }}" defer></script>
+<script src="{{ URL::asset('js/utils.js') }}" defer></script>
+<script src="{{ URL::asset('js/filterBox.js') }}" defer></script>
 <div class="custom-filterBox filterbox col-xl-lg-1 col-md-3 px-auto  d-lg-flex d-sm-none justify-content-center" style="margin-bottom: 10rem;">
     <div class="container  col-md-3">
         <h4 class="text-center"> Search </h4>

@@ -2,11 +2,11 @@
 
 
 @section('content')
-    <script type="text/javascript" src="{{ URL::asset('js/toaster.js') }}" defer></script>
+    <script src="{{ URL::asset('js/toaster.js') }}" defer></script>
 
-    <script type="text/javascript" src="{{ URL::asset('js/utils.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/homepage.js') }}" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/save_post.js') }}" defer></script>
+    <script src="{{ URL::asset('js/utils.js') }}" defer></script>
+    <script src="{{ URL::asset('js/homepage.js') }}" defer></script>
+    <script src="{{ URL::asset('js/save_post.js') }}" defer></script>
     <div class="homepage row g-0" style="margin-top: 5em; margin-bottom:7em;">
         <div class="homepage-view col-xl-2 col-lg-1 col-12 pt-lg-5 pt-2 px-lg-3 px-xl-5" style="margin-bottom: 10rem;">
             <nav class="nav homepage-navbar  w-100 d-lg-block   justify-content-lg-center justify-content-around py-2" style="position: absolute;">

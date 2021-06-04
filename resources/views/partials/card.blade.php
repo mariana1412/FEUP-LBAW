@@ -32,7 +32,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{$post->title}}
                 </h5>
-                <small>by <a id="authorName" href='/user/{{$post->user_id}}'>{{$post->author}}</a>, {{date("F j, Y", strtotime($post->created_at))}}</small>
+                <small>by <a class="authorName" href='/user/{{$post->user_id}}'>{{$post->author}}</a>, {{date("F j, Y", strtotime($post->created_at))}}</small>
                 <p class="card-text" style="text-align: start;">{{Str::limit(wordwrap($post->content, 25),250) }} <strong style="font-size:13px;">(readmore)</strong></p>
                 </div>
         </div>
