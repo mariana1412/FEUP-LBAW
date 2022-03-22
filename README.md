@@ -29,8 +29,17 @@ Moderation URL: ```http://lbaw2123.lbaw-prod.fe.up.pt/moderator/reports```
 | moderator | styrere    | 123456 |
 | regular | ssmoote1      | 123456 |
 
+## Grades
 
+ER = 98%
 
+EBD = 96%
+
+EAP = 93%
+
+PA = 87%
+
+Final Grade = 92%
 
 ## Team 
 
